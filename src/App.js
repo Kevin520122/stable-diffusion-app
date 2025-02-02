@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import './index.css';
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render(){
+    return(
+      <div className="container">
+        <div id="overlay">
+          <div id="overlayText">Loading your image please wait..</div>
+        </div>
+        <form onSubmit={this.handleSubmit}>
+          <h1>Stable Diffusion App</h1>
+          <input 
+            autoFocus={true}
+            type="text"
+            placeholder="Enter your text"
+            name="searchQuery"
+            id="searchQuery"
+          />
+          <div>
+            <input type="submit" value="Submit"/>
+          </div>
+          <div>
+            <br></br>
+            <img
+              id="myImage"
+              alt="Your Image will appear here"
+              className="imageContainer"
+            />
+          </div>
+        </form>
+        
+      </div>
+    )
+  }
 }
-
 export default App;
