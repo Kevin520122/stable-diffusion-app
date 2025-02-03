@@ -17,8 +17,7 @@ class App extends Component {
       method: 'POST',
       data: JSON.stringify(data),
       headers: { 
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Content-Type': 'application/json'
       },
       url: api,
       timeout: 10000
