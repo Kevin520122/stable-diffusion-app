@@ -9,23 +9,27 @@ class App extends Component {
    
     console.log(prompt);
     console.log(process.env.NODE_ENV);
+
     document.querySelector('#overlay').style.display = 'block';
+
     const api = process.env.NODE_ENV === 'development' ? '/test/stabled' : 'https://z94hdbw4bg.execute-api.us-west-2.amazonaws.com/test/stabled';
 
     const data = { data: prompt };
+
     axios({
       method: 'POST',
       data: JSON.stringify(data),
       headers: { 
         'Content-Type': 'application/json'
       },
-      url: api,
-      timeout: 30000
+      url: api
     })
       .then((response) => {
         console.log(response);
+        //Render the image
         const el = document.querySelector('#myImage');
         el.setAttribute('src', response.data.body);
+        //After rendering the image, hide the overlay
         setTimeout(() => {
           document.querySelector('#overlay').style.display = 'none';
           const elem = document.getElementById('searchQuery');
