@@ -6,5 +6,5 @@ const proxy = {
   changeOrigin: true,
 };
 module.exports = function (app) {
-  app.use('/add_cors', createProxyMiddleware(proxy));
+  app.use('/test', createProxyMiddleware(proxy));
 };

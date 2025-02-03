@@ -10,8 +10,7 @@ class App extends Component {
     console.log(prompt);
     console.log(process.env.NODE_ENV);
     document.querySelector('#overlay').style.display = 'block';
-    const api = process.env.NODE_ENV === 'development' ? 
-    '/add_cors/stabled' : 'https://z94hdbw4bg.execute-api.us-west-2.amazonaws.com/add_cors/stabled';
+    const api = process.env.NODE_ENV === 'development' ? '/test/stabled' : 'https://z94hdbw4bg.execute-api.us-west-2.amazonaws.com/test/stabled';
 
     const data = { data: prompt };
     axios({
