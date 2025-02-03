@@ -16,8 +16,12 @@ class App extends Component {
     axios({
       method: 'POST',
       data: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
       url: api,
+      timeout: 10000
     })
       .then((response) => {
         console.log(response);
