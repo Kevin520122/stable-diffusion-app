@@ -20,7 +20,7 @@ class App extends Component {
         'Content-Type': 'application/json'
       },
       url: api,
-      timeout: 10000
+      timeout: 30000
     })
       .then((response) => {
         console.log(response);
